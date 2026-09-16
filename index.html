@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Coach PJ — Stap voor stap naar blijvende voedingsgewoontes</title>
+<meta name="description" content="Voedingscoaching in Waregem, Kruisem en online. Stap voor stap naar blijvende gewoontes, voor gewichtsbeheer en sportvoeding. Ontdek de aanpak en trajecten van Food Coach PJ.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.foodcoachpj.be/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Food Coach PJ — Stap voor stap naar blijvende voedingsgewoontes">
+<meta property="og:description" content="Voedingscoaching in Waregem, Kruisem en online. Stap voor stap naar blijvende gewoontes, voor gewichtsbeheer en sportvoeding. Ontdek de aanpak en trajecten van Food Coach PJ.">
+<meta property="og:url" content="https://www.foodcoachpj.be/">
+<meta property="og:image" content="https://www.foodcoachpj.be/pj-photo.jpg">
+<meta property="og:locale" content="nl_BE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12141C;
+    --orange:#F0501F;
+    --paper:#F1EEE6;
+    --line:rgba(255,255,255,.14);
+    --line-dark:#DDD7C9;
+    --muted:#54565E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper);color:var(--ink);font-family:'Work Sans',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  a{color:inherit;}
+  img{display:block;max-width:100%;}
+  h1,h2,h3{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:.01em;line-height:.92;text-transform:uppercase;}
+
+  .marker{display:flex;align-items:baseline;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;}
+  .marker .line{flex:0 0 28px;height:1px;background:var(--orange);}
+
+  nav{background:var(--paper);border-bottom:1px solid var(--line-dark);position:sticky;top:0;z-index:10;}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;}
+  .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .nav-brand img{width:32px;height:32px;}
+  .nav-brand span{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--ink);letter-spacing:.03em;}
+  .nav-links{display:flex;gap:30px;list-style:none;font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.04em;}
+  .nav-links a{text-decoration:none;color:var(--muted);transition:color .15s;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{border:1px solid var(--ink);color:var(--ink);padding:9px 18px;font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;}
+  .nav-cta:hover{background:var(--ink);color:var(--paper);}
+  .nav-login{font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;color:var(--muted);}
+  .nav-login:hover{color:var(--ink);}
+  @media (max-width:860px){.nav-links{display:none;}}
+
+  .hero{background:var(--ink);color:var(--paper);}
+  .hero-grid{display:grid;grid-template-columns:1fr .82fr;min-height:560px;}
+  .hero-copy{padding:76px 56px 52px 32px;display:flex;flex-direction:column;justify-content:center;max-width:560px;}
+  .hero-copy h1{font-size:clamp(42px,5.2vw,62px);color:var(--paper);margin-bottom:20px;}
+  .hero-copy h1 span{color:var(--orange);}
+  .hero-copy p.lead{font-size:16px;color:#C7C9D2;max-width:440px;margin-bottom:32px;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;}
+  .btn{font-family:'IBM Plex Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:.05em;padding:15px 26px;text-decoration:none;display:inline-block;border:1px solid transparent;}
+  .btn-primary{background:var(--orange);color:var(--ink);}
+  .btn-primary:hover{background:#FF6B3D;}
+  .btn-ghost{border:1px solid var(--line);color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--paper);}
+  .btn-dark{background:var(--ink);color:var(--paper);}
+  .btn-dark:hover{background:#232636;}
+
+  .hero-photo{position:relative;overflow:hidden;}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:grayscale(.15) contrast(1.05);}
+  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ink) 0%, transparent 14%);}
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;min-height:auto;}
+    .hero-photo{height:300px;order:-1;}
+    .hero-copy{padding:40px 24px 44px;}
+  }
+
+  .strip{background:var(--paper);border-bottom:1px solid var(--line-dark);}
+  .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+  .strip-cell{padding:18px 24px;border-left:1px solid var(--line-dark);font-family:'IBM Plex Mono',monospace;}
+  .strip-cell:first-child{border-left:none;padding-left:0;}
+  .strip-cell b{display:block;font-size:22px;color:var(--ink);font-weight:500;}
+  .strip-cell span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;}
+  @media (max-width:860px){.strip .wrap{grid-template-columns:repeat(2,1fr);}.strip-cell{border-bottom:1px solid var(--line-dark);}}
+
+  section{padding:84px 0;}
+  .section-head{max-width:600px;margin-bottom:50px;}
+  .section-head h2{font-size:clamp(32px,4vw,44px);}
+
+  /* OVER MIJ — moved up, prominent */
+  .about{border-bottom:1px solid var(--line-dark);}
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start;}
+  .about-photo{border:1px solid var(--line-dark);padding:6px;}
+  .about-photo img{filter:grayscale(.1);}
+  .about-copy p{font-size:15px;color:var(--muted);margin-bottom:16px;max-width:520px;}
+  .about-copy p:last-of-type{margin-bottom:26px;}
+  .about-copy strong{color:var(--ink);}
+  @media (max-width:860px){.about-grid{grid-template-columns:1fr;}}
+
+  .course{border-top:1px solid var(--line-dark);}
+  .course-step{display:grid;grid-template-columns:140px 1fr;gap:32px;padding:28px 0;border-bottom:1px solid var(--line-dark);align-items:start;}
+  .course-step .km{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--orange);padding-top:4px;}
+  .course-step h3{font-family:'Work Sans',sans-serif;text-transform:none;font-weight:600;font-size:19px;letter-spacing:0;margin-bottom:8px;color:var(--ink);}
+  .course-step p{font-size:14px;color:var(--muted);max-width:520px;}
+  @media (max-width:640px){.course-step{grid-template-columns:1fr;gap:8px;}}
+
+  /* OFFER — now equal footing, both light */
+  .offer-split{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line-dark);}
+  .offer-card{padding:44px 40px;background:var(--paper);}
+  .offer-card:first-child{border-right:1px solid var(--line-dark);}
+  .offer-card h3{font-size:32px;margin:6px 0 16px;}
+  .offer-card p{font-size:14px;max-width:400px;margin-bottom:22px;color:var(--muted);}
+  .offer-list{list-style:none;font-family:'IBM Plex Mono',monospace;font-size:12.5px;display:flex;flex-direction:column;gap:10px;margin-bottom:26px;color:#40424A;}
+  .offer-list li{border-top:1px solid var(--line-dark);padding-top:10px;}
+  .offer-list li:first-child{border-top:none;padding-top:0;}
+  .offer-link{font-family:'IBM Plex Mono',monospace;font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:2px;}
+  @media (max-width:860px){.offer-split{grid-template-columns:1fr;}.offer-card:first-child{border-right:none;border-bottom:1px solid var(--line-dark);}}
+
+  .packages{border:1px solid var(--line-dark);border-top:none;}
+  .pkg-row{display:grid;grid-template-columns:1fr 1fr;}
+  .pkg{padding:34px 40px;border-top:1px solid var(--line-dark);}
+  .pkg:first-child{border-right:1px solid var(--line-dark);}
+  .pkg .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:10px;}
+  .pkg-name{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.02em;}
+  .pkg-price{font-family:'IBM Plex Mono',monospace;font-size:28px;margin:6px 0 4px;color:var(--orange);}
+  .pkg-sub{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#7B7D84;text-transform:uppercase;letter-spacing:.04em;margin-bottom:16px;}
+  .pkg p.desc{font-size:13.5px;color:var(--muted);max-width:340px;}
+  @media (max-width:640px){.pkg-row{grid-template-columns:1fr;}.pkg:first-child{border-right:none;}}
+
+  .quotes{border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);}
+  .quote-row{display:grid;grid-template-columns:repeat(3,1fr);}
+  .quote-cell{padding:38px 34px;border-left:1px solid var(--line-dark);}
+  .quote-cell:first-child{border-left:none;padding-left:0;}
+  .quote-cell p{font-size:15px;color:var(--muted);margin-bottom:16px;line-height:1.55;}
+  .quote-cell .who{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--orange);}
+  @media (max-width:860px){.quote-row{grid-template-columns:1fr;}.quote-cell{border-left:none;border-top:1px solid var(--line-dark);padding:30px 0;}}
+
+  .cta-band{background:var(--paper);border:1px solid var(--line-dark);padding:52px 48px;display:flex;justify-content:space-between;align-items:center;gap:26px;flex-wrap:wrap;}
+  .cta-copy{display:flex;align-items:center;gap:22px;max-width:520px;}
+  .cta-band img{width:56px;height:56px;flex-shrink:0;}
+  .cta-band h2{font-size:clamp(26px,3.2vw,36px);}
+
+  footer{background:var(--ink);color:#8C8FA0;padding:44px 0 30px;}
+  .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;border-bottom:1px solid var(--line);padding-bottom:30px;}
+  .footer-brand{display:flex;align-items:center;gap:10px;color:var(--paper);}
+  .footer-brand img{width:26px;height:26px;}
+  .footer-links{display:flex;gap:44px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:12px;}
+  .footer-col h4{color:#54565E;text-transform:uppercase;letter-spacing:.06em;font-size:10.5px;margin-bottom:12px;}
+  .footer-col a{display:block;color:#B7BAC4;text-decoration:none;margin-bottom:9px;}
+  .footer-bottom{margin-top:22px;font-family:'IBM Plex Mono',monospace;font-size:11px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.foodcoachpj.be/#business",
+      "name": "Food Coach PJ",
+      "url": "https://www.foodcoachpj.be/",
+      "image": "https://www.foodcoachpj.be/pj-photo.jpg",
+      "logo": "https://www.foodcoachpj.be/logo-nobg.png",
+      "priceRange": "€€",
+      "telephone": "+32 499 28 50 28",
+      "email": "info@foodcoachpj.be",
+      "areaServed": [
+        "Waregem",
+        "Kruisem",
+        "Kruishoutem",
+        "Online"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Pieter-Jan",
+        "jobTitle": "Voedingsdeskundige"
+      },
+      "department": [
+        {
+          "@id": "https://www.foodcoachpj.be/#waregem"
+        },
+        {
+          "@id": "https://www.foodcoachpj.be/#kruisem"
+        }
+      ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "name": "Kickstart traject",
+          "price": "275",
+          "priceCurrency": "EUR",
+          "url": "https://www.foodcoachpj.be/tarieven.html"
+        },
+        {
+          "@type": "Offer",
+          "name": "Volledig traject",
+          "price": "525",
+          "priceCurrency": "EUR",
+          "url": "https://www.foodcoachpj.be/tarieven.html"
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.foodcoachpj.be/#waregem",
+      "name": "Food Coach PJ — Kineco Waregem",
+      "telephone": "+32 499 28 50 28",
+      "email": "info@foodcoachpj.be",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Olmstraat 107",
+        "postalCode": "8790",
+        "addressLocality": "Waregem",
+        "addressCountry": "BE"
+      },
+      "hasMap": "https://maps.app.goo.gl/CEncTh1ypQwSVBoB9",
+      "parentOrganization": {
+        "@id": "https://www.foodcoachpj.be/#business"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.foodcoachpj.be/#kruisem",
+      "name": "Food Coach PJ — Reboost Kruisem",
+      "telephone": "+32 499 28 50 28",
+      "email": "info@foodcoachpj.be",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Hedekensdriesstraat 10",
+        "postalCode": "9770",
+        "addressLocality": "Kruisem",
+        "addressCountry": "BE"
+      },
+      "hasMap": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x47c313b1abbe2d55:0xb1739ff13fe221d5?sa=X&ved=1t:8290&ictx=111",
+      "parentOrganization": {
+        "@id": "https://www.foodcoachpj.be/#business"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="nav-brand"><img src="logo-nobg.png" alt="Food Coach PJ logo"><span>Food Coach PJ</span></a>
+    <ul class="nav-links">
+      <li><a href="#over-mij">Over mij</a></li>
+      <li><a href="aanpak.html">Aanpak</a></li>
+      <li><a href="#aanbod">Aanbod</a></li>
+      <li><a href="tarieven.html">Tarieven</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:18px;"><a href="https://app.foodcoachpj.be" class="nav-login" target="_blank" rel="noopener">Login</a><a href="contact.html" class="nav-cta">Boek een afspraak</a></div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="marker"><span class="line"></span>Waregem · Kruisem · Online</span>
+      <h1>Nooit meer <span>opnieuw</span> beginnen.</h1>
+      <p class="lead">Voedingscoaching die stap voor stap werkt: één focuspunt per keer, nooit alles tegelijk. Of je nu wil afvallen, gezonder wil leven of sportprestaties wil verbeteren — dezelfde aanpak, gebouwd om te blijven hangen.</p>
+      <div class="cta-row">
+        <a href="#boeken" class="btn btn-primary">Start je traject</a>
+        <a href="aanpak.html" class="btn btn-ghost">Hoe het werkt</a>
+      </div>
+    </div>
+    <div class="hero-photo"><img src="pj-photo.jpg" alt="PJ tijdens een coachingsgesprek"></div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <div class="strip-cell"><b>5–10</b><span>sessies per traject</span></div>
+    <div class="strip-cell"><b>01</b><span>focuspunt per sessie</span></div>
+    <div class="strip-cell"><b>2</b><span>jaar als coach</span></div>
+    <div class="strip-cell"><b>3</b><span>locaties: WRG / KRU / online</span></div>
+  </div>
+</div>
+
+<section class="about" id="over-mij">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:40px;">
+      <span class="marker"><span class="line"></span>Over mij</span>
+      <h2>Waarom ik met trajecten werk.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo"><img src="pj-photo.jpg" alt="Pieter-Jan, Food Coach PJ"></div>
+      <div class="about-copy">
+        <p>Ik ben Pieter-Jan, papa van twee, en ooit was ik het tegenovergestelde van wie ik nu ben. Na mijn tijd als handballer viel het sporten weg — het werk nam over, en met stress kwamen ook de gewoontes die niet hielpen. Op een bepaald moment voelde ik me gewoon niet meer goed in mijn vel.</p>
+        <p>Ik ben toen zelf beginnen bijsturen: eerst voeding, dan bewegen, stap voor stap. Wat begon als lopen groeide uit tot triatlon, ultralopen en crossfit. In 2023 besefte ik dat ik dit ook voor anderen wilde doen, en volgde ik de opleiding voedingsdeskundige aan het Centrum voor Avondonderwijs — diploma op zak in 2024.</p>
+        <p><strong>Die geschiedenis is precies waarom ik nu met vaste trajecten werk:</strong> ik weet uit ervaring dat blijvende verandering nooit in één keer lukt. Wel stap voor stap, volgehouden, sessie na sessie — zonder strenge regels of schuldgevoel bij een pakje friet.</p>
+        <a href="aanpak.html" class="offer-link">Bekijk hoe een traject eruitziet →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="aanpak">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="marker"><span class="line"></span>De aanpak</span>
+      <h2>Eén focuspunt tegelijk, geen infodump.</h2>
+    </div>
+    <div class="course">
+      <div class="course-step"><div class="km">STAP 1</div><div><h3>Intake — vooral luisteren</h3><p>Een gesprek waarin ik jouw doelen, ritme en obstakels in kaart breng — zonder meteen te sturen of te adviseren.</p></div></div>
+      <div class="course-step"><div class="km">STAP 2</div><div><h3>Eén observatie-oefening</h3><p>Je gaat naar huis met exact één simpele oefening. Geen huiswerkpakket, gewoon observeren.</p></div></div>
+      <div class="course-step"><div class="km">STAP 3</div><div><h3>Eén focuspunt per sessie</h3><p>Uit de oefening halen we samen actiepunten. Elke sessie werken we aan precies één aanpassing.</p></div></div>
+      <div class="course-step"><div class="km">STAP 4</div><div><h3>Opvolging &amp; bijsturing</h3><p>We bouwen door tot je nieuwe gewoontes je nieuwe normaal zijn — dan evalueren we samen en bekijken we de volgende stap.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="aanbod" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="marker"><span class="line"></span>Voor wie</span>
+      <h2>Twee ingangen, dezelfde aanpak.</h2>
+    </div>
+    <div class="offer-split">
+      <div class="offer-card">
+        <span class="marker"><span class="line"></span>Gewichtsbeheer &amp; voeding</span>
+        <h3>Grip op je gewicht</h3>
+        <p>Voor wie gezonder wil eten of grip wil op gewicht — zonder sportjargon, zonder strenge regels.</p>
+        <ul class="offer-list"><li>Aangepast aan jouw dagelijks leven</li><li>Stap voor stap, geen crashdieet</li><li>Persoonlijke begeleiding</li></ul>
+        <a href="#" class="offer-link">Ontdek gewichtsbeheer →</a>
+      </div>
+      <div class="offer-card">
+        <span class="marker"><span class="line"></span>Sportvoeding</span>
+        <h3>Voeding die presteert</h3>
+        <p>Voeding rond training en wedstrijd, afgestemd op jouw kalender — vanuit mijn eigen ervaring als duursporter.</p>
+        <ul class="offer-list"><li>Voeding voor, tijdens en na training</li><li>Afstemming op je wedstrijdkalender</li><li>Voor lopers, triatleten en meer</li></ul>
+        <a href="#" class="offer-link">Ontdek sportvoeding →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tarieven" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="marker"><span class="line"></span>Trajecten</span>
+      <h2>Je engageert je één keer, dan ligt je traject vast.</h2>
+    </div>
+    <div class="packages">
+      <div class="pkg-row">
+        <div class="pkg">
+          <div class="tag">Aanbevolen start</div>
+          <div class="pkg-name">Kickstart</div>
+          <div class="pkg-price">€275</div>
+          <div class="pkg-sub">Intake + 4 sessies · 5 in totaal</div>
+          <p class="desc">Het standaardtraject waarmee elke klant start. Volledig vooraf betaald bij de intake, geen losse facturen per sessie.</p>
+        </div>
+        <div class="pkg">
+          <div class="tag">Verlengd traject</div>
+          <div class="pkg-name">Volledig traject</div>
+          <div class="pkg-price">€525</div>
+          <div class="pkg-sub">Intake + 9 sessies · 10 in totaal</div>
+          <p class="desc">Voor wie meteen voor een langer traject kiest, of na de Kickstart verder wil bouwen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quotes">
+  <div class="wrap" style="padding-top:70px;">
+    <div class="section-head" style="margin-bottom:0;"><span class="marker"><span class="line"></span>Uit de praktijk</span></div>
+  </div>
+  <div class="wrap" style="padding-top:26px;padding-bottom:70px;">
+    <div class="quote-row">
+      <div class="quote-cell"><p>"Toegankelijke coach. Bekijkt hoe je stap per stap aan een nieuw eetpatroon kan werken. Geen klassieke dieetregels maar op maat van je noden."</p><div class="who">Virginie — Google review</div></div>
+      <div class="quote-cell"><p>"Ben heel blij dat ik Pieter-Jan ben tegengekomen in de voorbereiding van mijn eerste Ironman. Hij brengt helder advies qua voeding, waardoor ik meer energie heb tijdens en na de trainingen."</p><div class="who">Ferre — Google review</div></div>
+      <div class="quote-cell"><p>"PJ hielp mij niet enkel met het klaarstomen van mijn summer-body, maar gaf mij ook een betere, gezondere eetgewoonte mee. Leuk om te weten dat je niet alles moet laten en toch gezond kan zijn!"</p><div class="who">Sofie — Google review</div></div>
+    </div>
+    <div style="text-align:center;margin-top:34px;">
+      <a href="https://g.page/r/CVcxMSL9y2POEAE/review" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--orange);text-decoration:none;border-bottom:1px solid var(--orange);padding-bottom:2px;">Bekijk alle reviews op Google →</a>
+    </div>
+  </div>
+</section>
+
+<section id="boeken">
+  <div class="wrap">
+    <div class="cta-band">
+      <div class="cta-copy">
+        <img src="logo-nobg.png" alt="">
+        <h2>Klaar om stap voor stap te bouwen aan je voeding?</h2>
+      </div>
+      <a href="contact.html" class="btn btn-dark">Start je traject</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="logo-nobg.png" alt="Food Coach PJ logo"><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.03em;">Food Coach PJ</span></div>
+      <div class="footer-links">
+        <div class="footer-col"><h4>Coaching</h4><a href="#over-mij">Over mij</a><a href="aanpak.html">Aanpak</a><a href="#aanbod">Aanbod</a></div>
+        <div class="footer-col"><h4>Praktisch</h4><a href="tarieven.html">Tarieven</a><a href="contact.html">Boek een afspraak</a><a href="contact.html">Contact</a></div>
+        <div class="footer-col"><h4>Locaties</h4><a href="#">Waregem</a><a href="#">Kruisem</a><a href="#">Online</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© Food Coach PJ</span><span>Waregem &amp; Kruisem, België</span></div>
+  </div>
+</footer>
+
+</body>
+</html>
