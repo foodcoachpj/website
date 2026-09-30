@@ -93,12 +93,12 @@
   }
 
   .strip{background:var(--paper);border-bottom:1px solid var(--line-dark);}
-  .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+  .strip .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));}
   .strip-cell{padding:18px 24px;border-left:1px solid var(--line-dark);font-family:'IBM Plex Mono',monospace;}
   .strip-cell:first-child{border-left:none;padding-left:0;}
   .strip-cell b{display:block;font-size:22px;color:var(--ink);font-weight:500;}
   .strip-cell span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;}
-  @media (max-width:860px){.strip .wrap{grid-template-columns:repeat(2,1fr);}.strip-cell{border-bottom:1px solid var(--line-dark);}}
+  @media (max-width:860px){.strip .wrap{grid-template-columns:repeat(2,minmax(0,1fr));}.strip-cell{border-bottom:1px solid var(--line-dark);}}
 
   section{padding:84px 0;}
   .section-head{max-width:600px;margin-bottom:50px;}
@@ -296,9 +296,9 @@
 <div class="strip">
   <div class="wrap">
     <div class="strip-cell"><b>5–10</b><span>sessies per traject</span></div>
-    <div class="strip-cell"><b>01</b><span>focuspunt per sessie</span></div>
+    <div class="strip-cell"><b>1</b><span>focuspunt per sessie</span></div>
     <div class="strip-cell"><b>2</b><span>jaar als coach</span></div>
-    <div class="strip-cell"><b>3</b><span>locaties: WRG / KRU / online</span></div>
+    <div class="strip-cell"><b>3</b><span>locaties</span></div>
   </div>
 </div>
 
@@ -311,9 +311,10 @@
     <div class="about-grid">
       <div class="about-photo"><img src="img-studio-headshot.jpg" alt="Pieter-Jan, Food Coach PJ"></div>
       <div class="about-copy">
-        <p>Ik ben Pieter-Jan, papa van twee, en ooit was ik het tegenovergestelde van wie ik nu ben. Na mijn tijd als handballer viel het sporten weg — het werk nam over, en met stress kwamen ook de gewoontes die niet hielpen. Op een bepaald moment voelde ik me gewoon niet meer goed in mijn vel.</p>
-        <p>Ik ben toen zelf beginnen bijsturen: eerst voeding, dan bewegen, stap voor stap. Wat begon als lopen groeide uit tot triatlon, ultralopen en crossfit. In 2023 besefte ik dat ik dit ook voor anderen wilde doen, en volgde ik de opleiding voedingsdeskundige aan het Centrum voor Avondonderwijs — diploma op zak in 2024.</p>
-        <p><strong>Die geschiedenis is precies waarom ik nu met vaste trajecten werk:</strong> ik weet uit ervaring dat blijvende verandering nooit in één keer lukt. Wel stap voor stap, volgehouden, sessie na sessie — zonder strenge regels of schuldgevoel bij een pakje friet.</p>
+        <p>Ik ben Pieter-Jan, papa van twee, en ooit was ik het tegenovergestelde van wie ik nu ben.</p>
+        <p>In 2017 besloot ik mijn leven om te gooien. Wat begon als een persoonlijke zoektocht naar gezonder eten en gewichtsverlies, groeide uit tot een passie voor voeding en sport. Wat begon met lopen, groeide na een paar jaar uit tot triatlon, swimrun en nu zelfs ultralopen en crossfit. Tijdens dit traject raakte ik dan ook steeds meer gefascineerd door sportvoeding.</p>
+        <p>Om mijn kennis te verdiepen en anderen te helpen bij hun gezondheidsdoelen, heb ik een opleiding gevolgd aan het Centrum voor Avondonderwijs, waar ik in 2024 mijn diploma als voedingsdeskundige heb behaald.</p>
+		<p><strong>Die weg, stap voor stap van zoektocht naar gewoonte, is precies waarom ik nu met vaste trajecten werk.</strong> Ik weet uit ervaring dat blijvende verandering nooit in één keer lukt, wel stap voor stap, volgehouden. Geen strenge regels, geen schuldgevoel bij eens lekker genieten. Wel een haalbare, duurzame weg naar een gezonder en fitter leven.</p>
         <a href="aanpak.html" class="offer-link">Bekijk hoe een traject eruitziet →</a>
       </div>
     </div>
@@ -347,14 +348,14 @@
         <h3>Grip op je gewicht</h3>
         <p>Voor wie gezonder wil eten of grip wil op gewicht — zonder sportjargon, zonder strenge regels.</p>
         <ul class="offer-list"><li>Aangepast aan jouw dagelijks leven</li><li>Stap voor stap, geen crashdieet</li><li>Persoonlijke begeleiding</li></ul>
-        <a href="#" class="offer-link">Ontdek gewichtsbeheer →</a>
+        <a href="aanpak.html" class="offer-link">Ontdek gewichtsbeheer →</a>
       </div>
       <div class="offer-card">
         <span class="marker"><span class="line"></span>Sportvoeding</span>
         <h3>Voeding die presteert</h3>
         <p>Voeding rond training en wedstrijd, afgestemd op jouw kalender — vanuit mijn eigen ervaring als duursporter.</p>
         <ul class="offer-list"><li>Voeding voor, tijdens en na training</li><li>Afstemming op je wedstrijdkalender</li><li>Voor lopers, triatleten en meer</li></ul>
-        <a href="#" class="offer-link">Ontdek sportvoeding →</a>
+        <a href="aanpak.html" class="offer-link">Ontdek sportvoeding →</a>
       </div>
     </div>
   </div>
