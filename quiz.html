@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waarom lukt afvallen bij jou niet? | Food Coach PJ</title>
+<meta name="description" content="Ontdek in 2 minuten welk eetpatroon jouw afvallen in de weg zit, met één concrete tip om vandaag mee te starten.">
+<!-- Op noindex tot de e-mailkoppeling live staat. Daarna weghalen en quiz.html toevoegen aan sitemap.xml -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12141C;
+    --orange:#F0501F;
+    --paper:#F1EEE6;
+    --line:rgba(255,255,255,.14);
+    --line-dark:#DDD7C9;
+    --muted:#54565E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--paper);color:var(--ink);font-family:'Work Sans',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;min-height:100vh;display:flex;flex-direction:column;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;width:100%;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:.01em;line-height:.95;text-transform:uppercase;}
+  .marker{display:flex;align-items:baseline;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;}
+  .marker .line{flex:0 0 28px;height:1px;background:var(--orange);}
+
+  .btn{font-family:'IBM Plex Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:.05em;padding:16px 28px;text-decoration:none;display:inline-block;border:1px solid transparent;text-align:center;font-weight:500;cursor:pointer;}
+  .btn-orange{background:var(--orange);color:var(--ink);}
+  .btn-orange:hover{background:#ff6a3a;}
+  .btn-dark{background:var(--ink);color:var(--paper);}
+  .btn-dark:hover{background:#232636;}
+  .btn-line{border-color:var(--ink);color:var(--ink);background:transparent;}
+  .btn-line:hover{background:rgba(18,20,28,.05);}
+  .btn[disabled]{opacity:.45;cursor:not-allowed;}
+
+  .top{background:var(--ink);}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;}
+  .brand{display:flex;align-items:center;gap:10px;color:var(--paper);text-decoration:none;}
+  .brand img{width:32px;height:32px;}
+  .brand span{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.03em;white-space:nowrap;}
+
+  main{flex:1;padding:48px 0 72px;}
+  .screen{display:none;}
+  .screen.on{display:block;}
+
+  /* intro */
+  .intro h1{font-size:clamp(44px,8vw,76px);margin:6px 0 20px;}
+  .intro h1 span{color:var(--orange);}
+  .intro p{font-size:18px;color:var(--muted);max-width:560px;margin-bottom:28px;}
+  .facts{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);}
+
+  /* vraag */
+  .progress{display:flex;align-items:center;gap:14px;margin-bottom:30px;}
+  .bar{flex:1;height:4px;background:var(--line-dark);}
+  .bar i{display:block;height:100%;background:var(--orange);width:0;transition:width .25s ease;}
+  .count{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);white-space:nowrap;}
+  .q h2{font-size:clamp(32px,5.4vw,46px);margin-bottom:26px;}
+  .opts{display:grid;gap:12px;}
+  .opt{display:block;width:100%;text-align:left;font:inherit;font-size:16.5px;line-height:1.4;padding:18px 20px;background:#F7F5EF;border:1px solid var(--line-dark);color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s;}
+  .opt:hover{border-color:var(--ink);}
+  .opt.sel{border-color:var(--orange);background:#fff;box-shadow:inset 4px 0 0 var(--orange);}
+  .nav-q{margin-top:26px;}
+  .back{background:none;border:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);cursor:pointer;padding:6px 0;}
+  .back:hover{color:var(--ink);}
+
+  /* e-mail */
+  .gate h2{font-size:clamp(34px,6vw,52px);margin-bottom:14px;}
+  .gate > p{color:var(--muted);font-size:17px;margin-bottom:26px;max-width:540px;}
+  form{display:grid;gap:16px;max-width:480px;}
+  label.f{display:grid;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;}
+  input[type=text],input[type=email]{font:inherit;font-size:16px;padding:14px 16px;border:1px solid var(--line-dark);background:#fff;color:var(--ink);text-transform:none;letter-spacing:0;}
+  input:focus{outline:2px solid var(--orange);outline-offset:1px;}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);}
+  .consent input{margin-top:4px;width:18px;height:18px;accent-color:var(--orange);flex:0 0 auto;}
+  .err{color:#B3261E;font-size:14px;display:none;}
+
+  /* resultaat */
+  .result .hero-r{background:var(--ink);color:var(--paper);padding:36px 32px;margin-bottom:28px;}
+  .result .hero-r .marker{margin-bottom:10px;}
+  .result h2{font-size:clamp(40px,7vw,64px);margin-bottom:14px;}
+  .result .lead{font-size:17.5px;color:#C7C9D2;}
+  .block{border-top:1px solid var(--line-dark);padding:24px 0;}
+  .block h3{font-size:26px;margin-bottom:8px;}
+  .block p{color:var(--muted);font-size:16px;}
+  .tip{background:#fff;border:1px solid var(--line-dark);box-shadow:inset 4px 0 0 var(--orange);padding:24px 24px;margin:6px 0 28px;}
+  .tip .marker{margin-bottom:8px;}
+  .tip p{font-size:16.5px;}
+  .cta{background:var(--ink);color:var(--paper);padding:32px;}
+  .cta h3{font-size:32px;margin-bottom:10px;}
+  .cta p{color:#B7BAC4;margin-bottom:22px;}
+  .cta .btns{display:flex;gap:12px;flex-wrap:wrap;}
+  .cta .btn-ghost{border-color:rgba(241,238,230,.45);color:var(--paper);}
+  .cta .btn-ghost:hover{background:rgba(241,238,230,.1);}
+  .small{margin-top:20px;font-size:13px;color:var(--muted);}
+
+  footer{background:var(--ink);color:#8C8FA0;padding:26px 0;font-family:'IBM Plex Mono',monospace;font-size:11.5px;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;max-width:1100px;}
+  footer a{color:#B7BAC4;text-decoration:none;}
+
+  @media (max-width:620px){
+    main{padding:32px 0 56px;}
+    .result .hero-r,.cta{padding:26px 22px;}
+    .btn{width:100%;}
+    .cta .btns{flex-direction:column;}
+  }
+</style>
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <a href="index.html" class="brand"><img src="logo-nobg.png" alt="Food Coach PJ logo"><span>Food Coach PJ</span></a>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+
+    <!-- INTRO -->
+    <section class="screen intro on" id="s-intro">
+      <span class="marker"><span class="line"></span>Gratis quiz</span>
+      <h1>Waarom lukt afvallen <span>bij jou niet?</span></h1>
+      <p>Meestal ligt het niet aan je wilskracht, maar aan een patroon dat je zelf niet ziet. Beantwoord 7 korte vragen en ontdek welk eetprofiel bij jou past, met één concrete tip om vandaag mee te starten.</p>
+      <button class="btn btn-orange" id="start">Start de quiz</button>
+      <div class="facts"><span>7 vragen</span><span>± 2 minuten</span><span>Geen calorieën tellen</span></div>
+    </section>
+
+    <!-- VRAGEN -->
+    <section class="screen q" id="s-q">
+      <div class="progress"><div class="bar"><i id="bar"></i></div><span class="count" id="count"></span></div>
+      <h2 id="q-title"></h2>
+      <div class="opts" id="opts"></div>
+      <div class="nav-q"><button class="back" id="back">← Vorige vraag</button></div>
+    </section>
+
+    <!-- E-MAIL -->
+    <section class="screen gate" id="s-gate">
+      <span class="marker"><span class="line"></span>Klaar</span>
+      <h2>Je profiel is klaar.</h2>
+      <p>Laat je voornaam en e-mail achter om je resultaat te zien. Je krijgt het ook in je mailbox, met wat meer uitleg en een paar tips de komende dagen.</p>
+      <form id="form" novalidate>
+        <label class="f">Voornaam<input type="text" id="fname" autocomplete="given-name" required></label>
+        <label class="f">E-mail<input type="email" id="email" autocomplete="email" required></label>
+        <!-- anti-spam: onzichtbaar voor bezoekers, bots vullen dit in -->
+        <div style="position:absolute;left:-9999px;" aria-hidden="true"><label>Website<input type="text" id="website" tabindex="-1" autocomplete="off"></label></div>
+        <label class="consent"><input type="checkbox" id="consent" required><span>Ja, Food Coach PJ mag me mijn resultaat en af en toe tips mailen. Uitschrijven kan altijd, met één klik.</span></label>
+        <p class="err" id="err"></p>
+        <button type="button" class="btn btn-orange" id="submit">Toon mijn resultaat</button>
+      </form>
+    </section>
+
+    <!-- RESULTAAT -->
+    <section class="screen result" id="s-result">
+      <div class="hero-r">
+        <span class="marker"><span class="line"></span><span id="r-hi">Jouw eetprofiel</span></span>
+        <h2 id="r-name"></h2>
+        <p class="lead" id="r-lead"></p>
+      </div>
+      <div class="block"><h3>Wat er gebeurt</h3><p id="r-what"></p></div>
+      <div class="block"><h3>Waarom het afvallen tegenhoudt</h3><p id="r-why"></p></div>
+      <div class="tip"><span class="marker"><span class="line"></span>Start hier mee</span><p id="r-tip"></p></div>
+      <div class="cta">
+        <h3>Wil je hier samen aan werken?</h3>
+        <p>In een traject pakken we dit patroon stap voor stap aan, één focuspunt per sessie. Twijfel je nog? Plan een gratis kennismaking van 20 minuten, online en zonder verplichting.</p>
+        <div class="btns">
+          <a class="btn btn-orange" id="r-book" href="contact.html" target="_blank" rel="noopener">Plan een gratis kennismaking</a>
+          <a class="btn btn-ghost" href="aanpak.html">Bekijk de aanpak</a>
+        </div>
+      </div>
+      <p class="small">Deze quiz geeft een algemeen beeld van je eetgewoontes en is geen medisch advies. Herken je jezelf in meerdere profielen? Dat is normaal: we kijken in je intake naar het volledige plaatje.</p>
+      <p class="small"><button class="back" id="redo">↺ Quiz opnieuw doen</button></p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; Food Coach PJ &middot; Deinsesteenweg 24, 9770 Kruisem &middot; BE1013379487</span>
+    <a href="algemene-voorwaarden.html">Algemene voorwaarden</a>
+  </div>
+</footer>
+
+<script>
+/* ===== Instellingen ===== */
+// Boekingslink voor het gratis kennismakingsgesprek (Cal.com). Leeg = valt terug op contact.html
+const KENNISMAKING_URL = "https://cal.com/foodcoachpj/kennismaking";
+// Endpoint dat de lead opslaat / in de mailinglijst zet (bv. MailerLite of Brevo via een Vercel-functie).
+// Zolang dit leeg is, wordt er NIETS verstuurd of opgeslagen: de quiz toont enkel het resultaat.
+const LEAD_ENDPOINT = "/api/quiz-lead";
+
+/* ===== Profielen ===== */
+// W = Weekendwisselaar, S = Ongemerkte Snacker, A = Alles-of-niets-starter, D = Drukke Doener
+const PROFILES = {
+  W: {
+    name: "De Weekendwisselaar",
+    lead: "Door de week doe je het goed. Het weekend draait het grotendeels terug.",
+    what: "Van maandag tot vrijdag heb je structuur: vaste uren, bewuste keuzes, weinig gesnoep. Vanaf vrijdagavond valt die structuur weg. Een aperitief, afhaal, een feestje, iets lekkers bij de koffie. Op zich niets mis mee, maar het gebeurt bijna elk weekend.",
+    why: "Een weekend is twee à drie dagen van de zeven, een flink stuk van je week. Wat je door de week opbouwt, wordt zo telkens weer gecompenseerd. Daardoor voelt het alsof je hard je best doet zonder resultaat, en dat is frustrerend.",
+    tip: "Kies dit weekend bewust één moment om echt te genieten, bijvoorbeeld zaterdagavond. De rest van het weekend eet je zoals op een gewone werkdag. Zo hoef je niets te schrappen, maar wordt het weekend geen reset meer."
+  },
+  S: {
+    name: "De Ongemerkte Snacker",
+    lead: "Je maaltijden zijn in orde. Wat ertussen zit, valt je zelf amper op.",
+    what: "Ontbijt, lunch en avondeten zijn eigenlijk prima. Maar tussendoor komt er van alles bij: een koekje bij de koffie, een handvol nootjes, iets uit de kast tijdens het koken, wat knabbelen in de zetel. Vaak uit gewoonte of verveling, niet uit honger.",
+    why: "Al die kleine momenten tellen samen meer op dan je zou denken, en omdat ze ongemerkt gebeuren, vallen ze buiten elk plan. Je hebt het gevoel dat je gezond eet, en dat klopt voor je maaltijden. Het verschil zit ertussen.",
+    tip: "Noteer één week lang alles wat je tussen je maaltijden eet, zonder iets te veranderen. Gewoon opschrijven: wat, wanneer en waarom. Alleen al zien wanneer en waarom je snackt, maakt een groot verschil."
+  },
+  A: {
+    name: "De Alles-of-niets-starter",
+    lead: "Je start vol overtuiging en heel streng. Tot het op een dag niet meer lukt.",
+    what: "Als je begint, ga je er volledig voor: een strak schema, alles wat 'niet mag' eruit. Een paar weken loopt dat goed. Dan komt er een drukke week, een feestje of gewoon een slechte dag, en voelt het alsof alles mislukt is. Je stopt, en een tijdje later begin je weer van voren af aan.",
+    why: "Een plan dat alleen werkt op goede dagen, houd je niet vol. Het probleem is niet dat je het niet kan, maar dat de lat zo hoog ligt dat één misstap genoeg is om alles te laten vallen. Elke nieuwe start maakt het daarna moeilijker om er nog in te geloven.",
+    tip: "Kies één kleine aanpassing die je ook op je slechtste dag nog kan volhouden, bijvoorbeeld elke dag een stuk groente bij je lunch. Niet meer. Wie elke dag een klein beetje doet, komt verder dan wie een paar weken alles doet."
+  },
+  D: {
+    name: "De Drukke Doener",
+    lead: "Je eet wanneer het past. En met jouw agenda past het vaak pas laat.",
+    what: "Werk, kinderen, verplaatsingen, sport: je dag zit vol. Je ontbijt sla je vaak over, je lunch is iets snels en tussendoor is er geen tijd. 's Avonds kom je uitgehongerd thuis, en dan is het moeilijk om nog rustig en bewust te eten.",
+    why: "Wie overdag te weinig eet, krijgt dat 's avonds terug: grote honger, snel eten, en vaak meer dan je wil. Het gaat dus niet om te veel eten, maar om op de verkeerde momenten eten. Je lichaam vraagt structuur die je agenda nu niet geeft.",
+    tip: "Zorg voor één vast eetmoment in de voormiddag, en maak het de avond ervoor al klaar: een ontbijt om mee te nemen of een stevig tussendoortje in je tas. Eén moment waar je niet meer over hoeft na te denken, haalt veel druk van je avond."
+  }
+};
+
+// Namen zoals de server en de automation in Resend ze verwachten
+const SLUGS = { W: 'weekendwisselaar', S: 'ongemerkte-snacker', A: 'alles-of-niets-starter', D: 'drukke-doener' };
+
+/* ===== Vragen ===== */
+const QUESTIONS = [
+  { q: "Hoe ziet een gewone werkdag eruit qua eten?", a: [
+    ["Mijn maaltijden zijn oké, maar ik neem vaak iets tussendoor.", "S"],
+    ["Ik sla vaak mijn ontbijt over en eet wanneer het past.", "D"],
+    ["Ik eet best gezond, tot het weekend begint.", "W"],
+    ["Dat hangt ervan af of ik in een 'goede periode' zit.", "A"]
+  ]},
+  { q: "Wat gebeurt er meestal van vrijdagavond tot zondag?", a: [
+    ["Dan laat ik het los: aperitief, afhaal, iets zoets.", "W"],
+    ["Als ik op schema zit, hou ik me streng. Anders maakt het niet meer uit.", "A"],
+    ["Veel gezellig knabbelen, in de zetel of bij vrienden.", "S"],
+    ["Druk met kinderen, sport en verplichtingen. Ik eet tussendoor wat ik kan.", "D"]
+  ]},
+  { q: "Hoe vaak eet je iets dat je niet gepland had?", a: [
+    ["Vaak 's avonds, omdat ik dan uitgehongerd ben.", "D"],
+    ["Meerdere keren per dag, vaak zonder erbij na te denken.", "S"],
+    ["Vooral in het weekend of op feestjes.", "W"],
+    ["Bijna nooit, of net heel veel. Er is geen tussenweg.", "A"]
+  ]},
+  { q: "Hoe liep je vorige poging om af te vallen?", a: [
+    ["Ik startte vol goede moed, maar na een paar weken was ik het beu.", "A"],
+    ["Door de week ging het goed, maar de weegschaal bleef hangen.", "W"],
+    ["Ik kon het niet volhouden met mijn drukke agenda.", "D"],
+    ["Ik at gezond, maar snapte niet waarom het niet lukte.", "S"]
+  ]},
+  { q: "Wanneer eet je je eerste maaltijd van de dag?", a: [
+    ["Vroeg, en daarna komt er regelmatig iets bij.", "S"],
+    ["Hangt af van welk plan of dieet ik op dat moment volg.", "A"],
+    ["Vaak pas laat in de voormiddag, of zelfs 's middags.", "D"],
+    ["Elke dag ongeveer hetzelfde uur, behalve in het weekend.", "W"]
+  ]},
+  { q: "Wat is jouw grootste valkuil?", a: [
+    ["Feestjes, etentjes en het weekend.", "W"],
+    ["Tijdsgebrek en stress.", "D"],
+    ["Eén slechte dag die maakt dat ik alles laat vallen.", "A"],
+    ["Gewoonte of verveling: de koekjestrommel, de tv.", "S"]
+  ]},
+  { q: "Hoe voel je je als je een keer uit de bocht gaat?", a: [
+    ["Dan is de dag, of zelfs de week, verpest.", "A"],
+    ["Daar sta ik eigenlijk niet bij stil, ik heb er de tijd niet voor.", "D"],
+    ["Geen probleem, maandag herbegin ik.", "W"],
+    ["Ik merk het meestal niet eens op.", "S"]
+  ]}
+];
+// Bij een gelijkstand beslist het antwoord op deze vraag (index 5 = grootste valkuil)
+const TIEBREAK_Q = 5;
+
+/* ===== Logica ===== */
+const $ = id => document.getElementById(id);
+let current = 0;
+const answers = new Array(QUESTIONS.length).fill(null);
+
+function show(id){
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('on'));
+  $(id).classList.add('on');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function renderQ(){
+  const item = QUESTIONS[current];
+  $('q-title').textContent = item.q;
+  $('count').textContent = `Vraag ${current + 1} van ${QUESTIONS.length}`;
+  $('bar').style.width = `${(current / QUESTIONS.length) * 100}%`;
+  $('back').style.visibility = current === 0 ? 'hidden' : 'visible';
+  const box = $('opts');
+  box.innerHTML = '';
+  item.a.forEach(([text, prof], i) => {
+    const b = document.createElement('button');
+    b.className = 'opt' + (answers[current] === i ? ' sel' : '');
+    b.textContent = text;
+    b.addEventListener('click', () => {
+      answers[current] = i;
+      b.classList.add('sel');
+      setTimeout(next, 180);
+    });
+    box.appendChild(b);
+  });
+}
+
+function next(){
+  if (current < QUESTIONS.length - 1){ current++; renderQ(); }
+  else { $('bar').style.width = '100%'; show('s-gate'); }
+}
+
+function profileKey(){
+  const score = {W:0, S:0, A:0, D:0};
+  answers.forEach((ai, qi) => { score[QUESTIONS[qi].a[ai][1]]++; });
+  const max = Math.max(...Object.values(score));
+  const tied = Object.keys(score).filter(k => score[k] === max);
+  if (tied.length === 1) return tied[0];
+  const tb = QUESTIONS[TIEBREAK_Q].a[answers[TIEBREAK_Q]][1];
+  return tied.includes(tb) ? tb : tied[0];
+}
+
+function showResult(firstName){
+  const key = profileKey();
+  const p = PROFILES[key];
+  $('r-hi').textContent = firstName ? `${firstName}, jouw eetprofiel` : 'Jouw eetprofiel';
+  $('r-name').textContent = p.name;
+  $('r-lead').textContent = p.lead;
+  $('r-what').textContent = p.what;
+  $('r-why').textContent = p.why;
+  $('r-tip').textContent = p.tip;
+  if (KENNISMAKING_URL) $('r-book').href = KENNISMAKING_URL;
+  try { window.va && window.va('event', {name:'quiz_resultaat', data:{profiel:key}}); } catch(e){}
+  show('s-result');
+  return key;
+}
+
+$('start').addEventListener('click', () => { current = 0; renderQ(); show('s-q'); });
+$('back').addEventListener('click', () => { if (current > 0){ current--; renderQ(); } });
+$('redo').addEventListener('click', () => { answers.fill(null); current = 0; renderQ(); show('s-q'); });
+
+// Geen gewone formulierverzending: zo werkt de knop ook in previews die formulieren blokkeren.
+$('form').addEventListener('submit', e => { e.preventDefault(); handleSubmit(); });
+$('submit').addEventListener('click', handleSubmit);
+
+async function handleSubmit(){
+  const fname = $('fname').value.trim();
+  const email = $('email').value.trim();
+  const err = $('err');
+  err.style.display = 'none';
+  if (!fname){ err.textContent = 'Vul je voornaam in.'; err.style.display = 'block'; return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ err.textContent = 'Dat e-mailadres lijkt niet te kloppen.'; err.style.display = 'block'; return; }
+  if (!$('consent').checked){ err.textContent = 'Vink het vakje aan, zodat ik je je resultaat mag mailen.'; err.style.display = 'block'; return; }
+
+  const key = showResult(fname);
+
+  if (LEAD_ENDPOINT){
+    try {
+      await fetch(LEAD_ENDPOINT, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ voornaam: fname, email, profiel: SLUGS[key], toestemming: true, website: $('website').value })
+      });
+    } catch(e){ /* resultaat staat al op het scherm; fout niet tonen aan de bezoeker */ }
+  }
+}
+</script>
+
+</body>
+</html>
