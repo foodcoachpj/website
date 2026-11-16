@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacyverklaring | Food Coach PJ</title>
+<meta name="description" content="Privacyverklaring van Food Coach PJ: welke gegevens ik verzamel via de quiz, afspraken en je traject, hoe lang ik ze bewaar en welke rechten je hebt.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.foodcoachpj.be/privacy.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Privacyverklaring | Food Coach PJ">
+<meta property="og:description" content="Welke gegevens ik verzamel, waarom, hoe lang ik ze bewaar en welke rechten je hebt.">
+<meta property="og:url" content="https://www.foodcoachpj.be/privacy.html">
+<meta property="og:image" content="https://www.foodcoachpj.be/pj-photo.jpg">
+<meta property="og:locale" content="nl_BE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12141C;
+    --orange:#F0501F;
+    --paper:#F1EEE6;
+    --line:rgba(255,255,255,.14);
+    --line-dark:#DDD7C9;
+    --muted:#54565E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper);color:var(--ink);font-family:'Work Sans',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  a{color:inherit;}
+  img{display:block;max-width:100%;}
+  h1,h2,h3{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:.01em;line-height:.92;text-transform:uppercase;}
+
+  .marker{display:flex;align-items:baseline;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;}
+  .marker .line{flex:0 0 28px;height:1px;background:var(--orange);}
+
+  nav{background:var(--paper);border-bottom:1px solid var(--line-dark);position:sticky;top:0;z-index:10;}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;position:relative;}
+  .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+  .nav-brand img{width:32px;height:32px;flex-shrink:0;}
+  .nav-brand span{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--ink);letter-spacing:.03em;white-space:nowrap;}
+  .nav-right{display:flex;align-items:center;gap:30px;}
+  .nav-links{display:flex;gap:30px;list-style:none;font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.04em;}
+  .nav-links a{text-decoration:none;color:var(--muted);transition:color .15s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--ink);}
+  .nav-actions{display:flex;align-items:center;gap:18px;}
+  .nav-cta{border:1px solid var(--ink);color:var(--ink);padding:9px 18px;font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;white-space:nowrap;}
+  .nav-cta:hover{background:var(--ink);color:var(--paper);}
+  .nav-login{font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;color:var(--muted);white-space:nowrap;}
+  .nav-login:hover{color:var(--ink);}
+  .nav-toggle{display:none;}
+  .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:26px;height:22px;cursor:pointer;flex-shrink:0;}
+  .nav-hamburger span{display:block;width:100%;height:2px;background:var(--ink);}
+  @media (max-width:860px){
+    .nav-brand span{font-size:17px;}
+    .nav-hamburger{display:flex;}
+    .nav-right{
+      display:none;flex-direction:column;align-items:flex-start;gap:22px;
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--paper);border-bottom:1px solid var(--line-dark);
+      padding:24px 32px 28px;z-index:30;
+    }
+    .nav-links{flex-direction:column;gap:16px;}
+    .nav-actions{flex-direction:column;align-items:flex-start;gap:14px;width:100%;}
+    .nav-cta{width:100%;text-align:center;}
+    .nav-toggle:checked ~ .nav-right{display:flex;}
+  }
+
+  .page-hero{background:var(--ink);color:var(--paper);padding:64px 0 44px;}
+  .page-hero h1{font-size:clamp(36px,5vw,54px);margin-bottom:16px;}
+  .page-hero p{font-size:16px;color:#C7C9D2;max-width:560px;}
+
+  section{padding:64px 0;}
+  .legal{display:grid;grid-template-columns:220px minmax(0,1fr);gap:56px;align-items:start;}
+  .toc{position:sticky;top:96px;font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.04em;}
+  .toc h4{color:var(--muted);font-size:10.5px;letter-spacing:.06em;margin-bottom:14px;font-weight:500;}
+  .toc a{display:block;text-decoration:none;color:var(--muted);padding:7px 0;border-bottom:1px solid var(--line-dark);}
+  .toc a:hover{color:var(--ink);}
+  .art{padding:0 0 38px;margin-bottom:38px;border-bottom:1px solid var(--line-dark);scroll-margin-top:90px;}
+  .art:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .art h2{font-size:clamp(26px,3.2vw,34px);margin-bottom:18px;}
+  .art p{font-size:15px;color:var(--muted);margin-bottom:14px;max-width:660px;}
+  .art ul{margin:0 0 14px 20px;max-width:660px;}
+  .art li{font-size:15px;color:var(--muted);margin-bottom:8px;}
+  .art b{color:var(--ink);font-weight:600;}
+  .note{border-left:3px solid var(--orange);padding:4px 0 4px 18px;margin:18px 0;max-width:660px;}
+  .note p{margin:0;color:var(--ink);}
+  @media (max-width:860px){.legal{grid-template-columns:minmax(0,1fr);gap:32px;}.toc{position:static;}}
+
+  .btn{font-family:'IBM Plex Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:.05em;padding:15px 26px;text-decoration:none;display:inline-block;border:1px solid transparent;text-align:center;}
+  .btn-dark{background:var(--ink);color:var(--paper);}
+  .btn-dark:hover{background:#232636;}
+
+  footer{background:var(--ink);color:#8C8FA0;padding:44px 0 30px;}
+  .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;border-bottom:1px solid var(--line);padding-bottom:30px;}
+  .footer-brand{display:flex;align-items:center;gap:14px;color:var(--paper);}
+  .footer-social{color:#B7BAC4;display:flex;align-items:center;margin-left:4px;}
+  .footer-social:hover{color:var(--paper);}
+  .footer-brand img{width:26px;height:26px;}
+  .footer-links{display:flex;gap:44px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:12px;}
+  .footer-col h4{color:#54565E;text-transform:uppercase;letter-spacing:.06em;font-size:10.5px;margin-bottom:12px;}
+  .footer-col a{display:block;color:#B7BAC4;text-decoration:none;margin-bottom:9px;}
+  .footer-bottom{margin-top:22px;font-family:'IBM Plex Mono',monospace;font-size:11px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+</style>
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="nav-brand"><img src="logo-nobg.png" alt="Food Coach PJ logo"><span>Food Coach PJ</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></label>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html#over-mij">Over mij</a></li>
+        <li><a href="aanpak.html">Aanpak</a></li>
+        <li><a href="index.html#aanbod">Aanbod</a></li>
+        <li><a href="tarieven.html">Tarieven</a></li>
+      </ul>
+      <div class="nav-actions"><a href="https://app.foodcoachpj.be" class="nav-login" target="_blank" rel="noopener">Login</a><a href="contact.html" class="nav-cta">Boek een afspraak</a></div>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <span class="marker"><span class="line"></span>Privacyverklaring</span>
+    <h1>Wat ik met je gegevens doe, en wat niet.</h1>
+    <p>Als voedingscoach krijg ik soms persoonlijke informatie van je. Hier lees je welke gegevens ik verzamel, waarom, hoe lang ik ze bewaar en welke rechten je hebt.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="legal">
+      <aside class="toc">
+        <h4>Op deze pagina</h4>
+        <a href="#wie">Wie ben ik</a>
+        <a href="#gegevens">Welke gegevens en waarom</a>
+        <a href="#bewaren">Hoe lang ik ze bewaar</a>
+        <a href="#delen">Met wie ik ze deel</a>
+        <a href="#beveiliging">Beveiliging</a>
+        <a href="#rechten">Je rechten</a>
+        <a href="#klacht">Een klacht indienen</a>
+        <a href="#wijzigingen">Wijzigingen</a>
+      </aside>
+
+      <div>
+        <article class="art" id="wie">
+          <h2>1. Wie is verantwoordelijk voor je gegevens</h2>
+          <p><b>Food Coach PJ</b>, Pieter-Jan Demaeght<br>
+          Deinsesteenweg 24, 9770 Kruisem<br>
+          Ondernemingsnummer: BE1013379487<br>
+          E-mail: <a href="mailto:info@foodcoachpj.be">info@foodcoachpj.be</a><br>
+          Telefoon: <a href="tel:+32499285028">+32 499 28 50 28</a></p>
+          <p>Heb je een vraag over je gegevens, of wil je een van je rechten gebruiken? Stuur dan een mail naar <a href="mailto:info@foodcoachpj.be">info@foodcoachpj.be</a>.</p>
+        </article>
+
+        <article class="art" id="gegevens">
+          <h2>2. Welke gegevens ik verzamel, en waarom</h2>
+          <p>Ik verzamel alleen wat ik echt nodig heb. Je gegevens worden nooit verkocht en nooit gebruikt voor reclame van anderen.</p>
+
+          <p><b>De quiz en tips per mail</b><br>
+          Vul je de quiz "Waarom lukt afvallen bij jou niet?" in, dan bewaar ik je <b>voornaam</b>, je <b>e-mailadres</b>, je <b>eetprofiel</b> (de uitkomst van de quiz) en het <b>moment waarop je toestemming gaf</b>. Je antwoorden op de afzonderlijke vragen bewaar ik niet.</p>
+          <p>Daarmee stuur ik je je resultaat en een korte reeks mails met tips, en af en toe nieuws over mijn praktijk. Dat doe ik enkel omdat je daar zelf toestemming voor gaf door het vakje aan te vinken. Je kan je op elk moment uitschrijven via de link onderaan elke mail.</p>
+
+          <p><b>Een kennismaking of afspraak boeken</b><br>
+          Boek je een gratis kennismaking of een afspraak, dan gebruik ik je <b>naam</b>, <b>e-mailadres</b>, <b>telefoonnummer</b> en wat je zelf invult bij het boeken. Die gegevens heb ik nodig om de afspraak in te plannen, je te bevestigen en je te kunnen bereiken. Dat is nodig om op jouw vraag in te gaan, nog voor er een overeenkomst is.</p>
+
+          <p><b>Je begeleiding tijdens een traject</b><br>
+          Start je een traject, dan verwerk ik naast je contactgegevens ook informatie die nodig is om je goed te begeleiden. Denk aan je geboortedatum, lengte, gewicht en andere metingen, je eet- en trainingsgewoontes, je doelen en notities van onze gesprekken. Die gegevens kunnen iets zeggen over je gezondheid, en dat zijn bijzondere persoonsgegevens. Ik verwerk ze enkel met je <b>uitdrukkelijke toestemming</b>, die ik vraag bij de start van je traject, en enkel om je begeleiding uit te voeren.</p>
+          <p>Gebruik je mijn app op <a href="https://app.foodcoachpj.be" target="_blank" rel="noopener">app.foodcoachpj.be</a>, dan worden de gegevens die je daar invult (zoals je voedings- en trainingslogboek en je metingen) daar bewaard. Alleen jij en ik kunnen ze zien.</p>
+          <p>Voor de facturatie van je traject bewaar ik je naam, adres en de factuurgegevens. Dat is een wettelijke verplichting.</p>
+
+          <p><b>Als je de website bezoekt</b><br>
+          Ik gebruik een eenvoudige bezoekersstatistiek om te zien hoeveel mensen de website bezoeken en welke pagina's ze bekijken. Die statistiek gebruikt <b>geen cookies</b> en houdt niet bij wie je bent. Je wordt dus niet gevolgd over andere websites.</p>
+        </article>
+
+        <article class="art" id="bewaren">
+          <h2>3. Hoe lang ik je gegevens bewaar</h2>
+          <ul>
+            <li><b>Quiz en tips per mail:</b> tot je je uitschrijft. Hoor ik 2 jaar niets meer van je en open je mijn mails niet meer, dan verwijder ik je gegevens.</li>
+            <li><b>Kennismaking zonder traject:</b> maximaal 1 jaar na het gesprek.</li>
+            <li><b>Begeleidingsdossier en app:</b> zolang je traject loopt en tot 2 jaar na je laatste sessie. Zo kan ik je goed verder helpen als je later terugkomt. Wil je dat ik alles eerder verwijder, dan kan dat altijd.</li>
+            <li><b>Facturen:</b> zo lang als de wet dat vraagt voor boekhoudkundige stukken.</li>
+          </ul>
+        </article>
+
+        <article class="art" id="delen">
+          <h2>4. Met wie ik je gegevens deel</h2>
+          <p>Ik deel je gegevens niet met anderen, behalve met diensten die ik nodig heb om mijn werk te doen. Zij verwerken je gegevens alleen in mijn opdracht en mogen ze niet voor iets anders gebruiken. Het gaat om:</p>
+          <ul>
+            <li>hosting van de website en de app</li>
+            <li>het versturen van e-mails</li>
+            <li>agenda- en boekingssystemen, en videogesprekken</li>
+            <li>opslag van mijn notities en documenten</li>
+          </ul>
+          <p>Sommige van die diensten zijn gevestigd buiten de Europese Unie, vooral in de Verenigde Staten. In dat geval gebeurt de doorgifte met de waarborgen die de Europese regels voorzien, zoals het EU-VS-kader voor gegevensbescherming of de standaardcontractbepalingen van de Europese Commissie.</p>
+          <p>Wil je weten welke diensten ik precies gebruik? Stuur me gerust een mail.</p>
+          <p>Ik geef je gegevens alleen aan anderen als de wet me daartoe verplicht, of als jij me daar zelf om vraagt, bijvoorbeeld om iets door te geven aan je arts.</p>
+        </article>
+
+        <article class="art" id="beveiliging">
+          <h2>5. Beveiliging</h2>
+          <p>Ik neem passende maatregelen om je gegevens te beschermen tegen verlies en misbruik. De website en de app gebruiken een beveiligde verbinding, je account in de app is beschermd met een wachtwoord, en enkel ik heb toegang tot de gegevens van alle klanten.</p>
+        </article>
+
+        <article class="art" id="rechten">
+          <h2>6. Je rechten</h2>
+          <p>Je hebt altijd het recht om:</p>
+          <ul>
+            <li>je gegevens <b>in te kijken</b> en te weten wat ik ermee doe</li>
+            <li>gegevens die niet kloppen te laten <b>verbeteren</b></li>
+            <li>je gegevens te laten <b>verwijderen</b>, tenzij ik ze wettelijk moet bewaren, zoals facturen</li>
+            <li>het gebruik van je gegevens te laten <b>beperken</b></li>
+            <li>je gegevens te <b>ontvangen</b> in een gangbaar bestand, of ze te laten doorsturen naar iemand anders</li>
+            <li><b>bezwaar te maken</b> tegen een bepaald gebruik van je gegevens</li>
+            <li>je <b>toestemming in te trekken</b>. Dat geldt dan voor de toekomst: wat ik daarvoor al met je toestemming deed, blijft in orde.</li>
+          </ul>
+          <p>Stuur hiervoor een mail naar <a href="mailto:info@foodcoachpj.be">info@foodcoachpj.be</a>. Ik antwoord binnen één maand. Om zeker te zijn dat ik je gegevens aan de juiste persoon geef, kan ik je vragen om te bevestigen wie je bent.</p>
+        </article>
+
+        <article class="art" id="klacht">
+          <h2>7. Een klacht indienen</h2>
+          <p>Ben je niet tevreden over hoe ik met je gegevens omga? Laat het me eerst weten, dan zoeken we samen een oplossing. Je hebt ook altijd het recht om een klacht in te dienen bij de Gegevensbeschermingsautoriteit:</p>
+          <p><b>Gegevensbeschermingsautoriteit</b><br>
+          Drukpersstraat 35, 1000 Brussel<br>
+          <a href="https://www.gegevensbeschermingsautoriteit.be" target="_blank" rel="noopener">www.gegevensbeschermingsautoriteit.be</a></p>
+        </article>
+
+        <article class="art" id="wijzigingen">
+          <h2>8. Wijzigingen</h2>
+          <p>Verandert er iets aan hoe ik met je gegevens omga, dan pas ik deze pagina aan. De meest recente versie vind je altijd hier.</p>
+          <p>Laatst bijgewerkt op 16 november 2026.</p>
+          <p style="margin-top:22px;"><a href="contact.html" class="btn btn-dark">Contact opnemen</a></p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="logo-nobg.png" alt="Food Coach PJ logo"><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.03em;">Food Coach PJ</span><a href="https://www.instagram.com/foodcoachpj/" class="footer-social" target="_blank" rel="noopener" aria-label="Instagram"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg></a></div>
+      <div class="footer-links">
+        <div class="footer-col"><h4>Coaching</h4><a href="index.html#over-mij">Over mij</a><a href="aanpak.html">Aanpak</a><a href="index.html#aanbod">Aanbod</a></div>
+        <div class="footer-col"><h4>Praktisch</h4><a href="tarieven.html">Tarieven</a><a href="algemene-voorwaarden.html">Algemene voorwaarden</a><a href="privacy.html">Privacyverklaring</a><a href="contact.html">Boek een afspraak</a><a href="contact.html">Contact</a></div>
+        <div class="footer-col"><h4>Locaties</h4><a href="voedingsadvies-waregem.html">Waregem</a><a href="voedingsadvies-kruisem.html">Kruisem</a><a href="contact.html">Online</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© Food Coach PJ</span><span>Waregem &amp; Kruisem, België</span></div>
+  </div>
+</footer>
+
+</body>
+</html>
