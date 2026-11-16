@@ -11,6 +11,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.foodcoachpj.be/online.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.foodcoachpj.be/tarieven.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -40,4 +45,12 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <!-- Gepland: quizpagina (lead magnet) op https://www.foodcoachpj.be/quiz.html
+       Pas toevoegen zodra de pagina live staat, anders verwijst de sitemap naar een 404.
+  <url>
+    <loc>https://www.foodcoachpj.be/quiz.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  -->
 </urlset>
