@@ -176,6 +176,15 @@
   .doubt .btn-primary{white-space:nowrap;background:var(--orange);color:var(--ink);}
   .doubt .btn-primary:hover{background:#FF6B3D;}
   @media (max-width:640px){.doubt{padding:36px 24px;gap:24px;}.doubt .btn-primary{white-space:normal;width:100%;text-align:center;padding:15px 18px;}}
+
+  .quiz-band{padding:56px 0 0;}
+  .quiz-card{background:var(--orange);color:var(--ink);padding:40px 44px;display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap;}
+  .quiz-card .marker{color:var(--ink);margin-bottom:12px;}
+  .quiz-card .marker .line{background:var(--ink);}
+  .quiz-card h2{font-size:clamp(30px,4vw,46px);margin-bottom:10px;}
+  .quiz-card p{font-size:15.5px;max-width:520px;color:#2A1A12;}
+  .quiz-card .btn{white-space:nowrap;}
+  @media (max-width:640px){.quiz-band{padding-top:40px;}.quiz-card{padding:32px 24px;gap:22px;}.quiz-card .btn{white-space:normal;width:100%;text-align:center;}}
 </style>
 <script type="application/ld+json">
 {
@@ -318,6 +327,19 @@
   </div>
 </div>
 
+<section class="quiz-band" aria-label="Gratis quiz">
+  <div class="wrap">
+    <div class="quiz-card">
+      <div>
+        <span class="marker"><span class="line"></span>Gratis quiz · 2 minuten</span>
+        <h2>Waarom lukt afvallen bij jou niet?</h2>
+        <p>Beantwoord 7 korte vragen en ontdek welk eetpatroon je in de weg zit, met één concrete tip om vandaag mee te starten.</p>
+      </div>
+      <a href="quiz.html" class="btn btn-dark">Doe de quiz</a>
+    </div>
+  </div>
+</section>
+
 <section class="about" id="over-mij">
   <div class="wrap">
     <div class="section-head" style="margin-bottom:40px;">
@@ -451,7 +473,7 @@
     <div class="footer-grid">
       <div class="footer-brand"><img src="logo-nobg.png" alt="Food Coach PJ logo"><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.03em;">Food Coach PJ</span><a href="https://www.instagram.com/foodcoachpj/" class="footer-social" target="_blank" rel="noopener" aria-label="Instagram"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg></a></div>
       <div class="footer-links">
-        <div class="footer-col"><h4>Coaching</h4><a href="#over-mij">Over mij</a><a href="aanpak.html">Aanpak</a><a href="#aanbod">Aanbod</a></div>
+        <div class="footer-col"><h4>Coaching</h4><a href="#over-mij">Over mij</a><a href="aanpak.html">Aanpak</a><a href="#aanbod">Aanbod</a><a href="quiz.html">Gratis quiz</a></div>
         <div class="footer-col"><h4>Praktisch</h4><a href="tarieven.html">Tarieven</a><a href="algemene-voorwaarden.html">Algemene voorwaarden</a><a href="privacy.html">Privacyverklaring</a><a href="contact.html">Boek een afspraak</a><a href="contact.html">Contact</a></div>
         <div class="footer-col"><h4>Locaties</h4><a href="voedingsadvies-waregem.html">Waregem</a><a href="voedingsadvies-kruisem.html">Kruisem</a><a href="online.html">Online</a></div>
       </div>
