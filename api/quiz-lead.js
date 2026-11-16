@@ -7,6 +7,12 @@
 const RESEND = 'https://api.resend.com';
 const EVENT_NAME = 'quiz.voltooid'; // moet gelijk zijn aan de trigger van de automation in Resend
 const PROFIELEN = ['weekendwisselaar', 'ongemerkte-snacker', 'alles-of-niets-starter', 'drukke-doener'];
+const PROFIEL_NAMEN = {
+  'weekendwisselaar': 'De Weekendwisselaar',
+  'ongemerkte-snacker': 'De Ongemerkte Snacker',
+  'alles-of-niets-starter': 'De Alles-of-niets-starter',
+  'drukke-doener': 'De Drukke Doener',
+};
 
 async function resend(path, body) {
   const r = await fetch(RESEND + path, {
@@ -65,6 +71,20 @@ module.exports = async (req, res) => {
     console.error('Event niet verstuurd', e.status, e.text);
     return res.status(502).json({ ok: false });
   }
+
+  // 3. Melding naar PJ: nieuwe quizdeelnemer. Mislukt dit, dan krijgt de bezoeker toch gewoon zijn resultaat.
+  const n = await resend('/emails', {
+    from: 'Quiz Food Coach PJ <quiz@nieuws.foodcoachpj.be>',
+    to: [process.env.NOTIFY_EMAIL || 'info@foodcoachpj.be'],
+    reply_to: email,
+    subject: `Nieuwe quizdeelnemer: ${voornaam} (${PROFIEL_NAMEN[profiel]})`,
+    text:
+      `${voornaam} heeft de quiz ingevuld.\n\n` +
+      `E-mail: ${email}\n` +
+      `Eetprofiel: ${PROFIEL_NAMEN[profiel]}\n\n` +
+      `De mailreeks is automatisch gestart. Antwoord op deze mail om ${voornaam} rechtstreeks te mailen.`,
+  });
+  if (!n.ok) console.warn('Melding niet verstuurd', n.status, n.text);
 
   return res.status(200).json({ ok: true });
 };
